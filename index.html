@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muzaffar Qosimov - Software Engineer</title>
+<meta name="description" content="Software Engineer - Angular, TypeScript, Node.js, Java. Author of open-source Angular component libraries and MCP developer tools." />
+<style>
+  :root {
+    --navy: #1f3a5f;
+    --navy-deep: #16293f;
+    --ink: #1e293b;
+    --muted: #64748b;
+    --bg: #f4f5f7;
+    --card: #ffffff;
+    --rule: #e2e8f0;
+    --accent: #3b82f6;
+    --green: #16a34a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-variant-ligatures: none;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: #fff;
+    padding: 72px 24px 64px;
+    text-align: center;
+  }
+  .hero h1 { font-size: clamp(30px, 5vw, 44px); letter-spacing: 0.5px; }
+  .hero .role {
+    font-size: clamp(15px, 2.4vw, 19px);
+    color: #b9c8dd;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+  .hero .blurb {
+    max-width: 640px;
+    margin: 18px auto 0;
+    font-size: 15px;
+    color: #93a7c4;
+  }
+  .hero .links { margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-ghost { background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.25); }
+
+  /* ---------- sections ---------- */
+  main { max-width: 1060px; margin: 0 auto; padding: 48px 24px 72px; }
+  h2 {
+    font-size: 22px;
+    color: var(--navy);
+    margin: 40px 0 6px;
+  }
+  .section-sub { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
+
+  /* ---------- project grid ---------- */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(15,23,42,0.10); }
+  .card h3 { font-size: 16.5px; color: var(--navy); }
+  .card .tagline { font-size: 13.5px; color: var(--muted); margin: 6px 0 12px; flex: 1; }
+  .badges { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+  .badge {
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 10px;
+    background: #eef2f7;
+    color: var(--navy);
+  }
+  .badge.b-npm { background: #fdeaea; color: #b91c1c; }
+  .badge.b-live { background: #e8f7ee; color: var(--green); }
+  .card .links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .card .links a {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .card .links a:hover { text-decoration: underline; }
+
+  /* ---------- skills ---------- */
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: var(--ink);
+  }
+
+  footer {
+    text-align: center;
+    padding: 26px 24px 40px;
+    color: var(--muted);
+    font-size: 13px;
+    border-top: 1px solid var(--rule);
+  }
+  footer a { color: var(--navy); text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Muzaffar Qosimov</h1>
+  <div class="role">Software Engineer &middot; Angular / TypeScript / Node.js</div>
+  <p class="blurb">
+    10+ years building enterprise-scale web applications - deep front-end expertise with
+    full-stack range across Node.js and Java/Spring Boot. Author of open-source Angular
+    component libraries and MCP developer tools, published on npm.
+  </p>
+  <div class="links">
+    <a class="btn btn-primary" href="https://github.com/qwertymuzaffar">GitHub</a>
+    <a class="btn btn-ghost" href="https://linkedin.com/in/qwertymuzaffar">LinkedIn</a>
+    <a class="btn btn-ghost" href="mailto:muzaffar.qosimov.dev@gmail.com">Email</a>
+  </div>
+</header>
+
+<main>
+  <h2>Open-Source Projects</h2>
+  <div class="section-sub">Everything below is public - click through to the code, the npm package, or a live demo.</div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>ngx-kanban-board</h3>
+      <div class="badges">
+        <span class="badge b-npm">npm</span><span class="badge b-live">live demo</span>
+        <span class="badge">Angular</span><span class="badge">CDK</span><span class="badge">96% coverage</span>
+      </div>
+      <p class="tagline">Drag-and-drop kanban board - pointer and keyboard dragging, WIP limits, signals API, themeable via CSS custom properties.</p>
+      <div class="links">
+        <a href="https://qwertymuzaffar.github.io/ngx-kanban-board/">Live Storybook</a>
+        <a href="https://www.npmjs.com/package/ngx-kanban-board">npm</a>
+        <a href="https://github.com/qwertymuzaffar/ngx-kanban-board">GitHub</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>ngx-diff-viewer</h3>
+      <div class="badges">
+        <span class="badge b-npm">npm</span><span class="badge b-live">live demo</span>
+        <span class="badge">Angular</span><span class="badge">100% line coverage</span>
+      </div>
+      <p class="tagline">Text diff viewer with side-by-side and inline modes - built-in LCS engine with intra-line change highlighting, zero dependencies.</p>
+      <div class="links">
+        <a href="https://qwertymuzaffar.github.io/ngx-diff-viewer/">Live Storybook</a>
+        <a href="https://www.npmjs.com/package/ngx-diff-viewer">npm</a>
+        <a href="https://github.com/qwertymuzaffar/ngx-diff-viewer">GitHub</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>timeline-api</h3>
+      <div class="badges">
+        <span class="badge">Node.js</span><span class="badge">Express 5</span><span class="badge">TypeScript</span><span class="badge">OpenAPI</span>
+      </div>
+      <p class="tagline">REST API for hierarchical project timelines - recursive SQL, duration-weighted progress rollup, Swagger docs, 13 integration tests, CI.</p>
+      <div class="links">
+        <a href="https://github.com/qwertymuzaffar/timeline-api">GitHub</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>shifo-java</h3>
+      <div class="badges">
+        <span class="badge">Java 21</span><span class="badge">Spring Boot 3</span><span class="badge">MySQL</span><span class="badge">Docker</span>
+      </div>
+      <p class="tagline">Clinic-management REST API - 12 feature modules, Spring Security with JWT, role-based access control, OpenAPI documentation.</p>
+      <div class="links">
+        <a href="https://github.com/qwertymuzaffar/shifo-java">GitHub</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>mcp-software-design</h3>
+      <div class="badges">
+        <span class="badge b-npm">npm</span><span class="badge">TypeScript</span><span class="badge">MCP</span>
+      </div>
+      <p class="tagline">MCP server that teaches AI coding agents software design - SOLID/OOP principles, all 23 GoF patterns, heuristic code-smell detection.</p>
+      <div class="links">
+        <a href="https://www.npmjs.com/package/mcp-software-design">npm</a>
+        <a href="https://github.com/qwertymuzaffar/mcp-software-design">GitHub</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>mcp-udacity-commit</h3>
+      <div class="badges">
+        <span class="badge b-npm">npm</span><span class="badge">JavaScript</span><span class="badge">MCP</span>
+      </div>
+      <p class="tagline">MCP server that validates and formats git commit messages and branch names against the Udacity style guide.</p>
+      <div class="links">
+        <a href="https://www.npmjs.com/package/mcp-udacity-commit">npm</a>
+        <a href="https://github.com/qwertymuzaffar/mcp-udacity-commit">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>Core Skills</h2>
+  <div class="section-sub">The stack I work in daily.</div>
+  <div class="skills">
+    <span class="skill">Angular (v2-22)</span>
+    <span class="skill">TypeScript</span>
+    <span class="skill">RxJS / NgRx</span>
+    <span class="skill">Signals &amp; Standalone Components</span>
+    <span class="skill">Node.js / Express</span>
+    <span class="skill">Java / Spring Boot</span>
+    <span class="skill">REST APIs / OpenAPI</span>
+    <span class="skill">Nx Monorepos</span>
+    <span class="skill">Jest / Vitest</span>
+    <span class="skill">Storybook</span>
+    <span class="skill">Docker / CI-CD</span>
+    <span class="skill">MCP / AI Tooling</span>
+  </div>
+</main>
+
+<footer>
+  Fairfax, VA - open to remote &middot;
+  <a href="https://github.com/qwertymuzaffar">GitHub</a> &middot;
+  <a href="https://linkedin.com/in/qwertymuzaffar">LinkedIn</a> &middot;
+  <a href="mailto:muzaffar.qosimov.dev@gmail.com">muzaffar.qosimov.dev&#64;gmail.com</a>
+</footer>
+
+</body>
+</html>
