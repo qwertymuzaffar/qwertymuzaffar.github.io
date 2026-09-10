@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Muzaffar Qosimov - Software Engineer</title>
-<meta name="description" content="Software Engineer - Angular, TypeScript, Node.js, Java. Author of open-source Angular component libraries and MCP developer tools." />
+<meta name="description" content="Software Engineer - Angular, TypeScript, Node.js, Java. Author of open-source Angular component libraries, LLM and RAG tooling, and MCP developer tools - 16 packages on npm." />
 <style>
   :root {
     --navy: #1f3a5f;
@@ -68,7 +68,8 @@
     color: var(--navy);
     margin: 40px 0 6px;
   }
-  .section-sub { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
+  main > h2:first-child { margin-top: 0; }
+  .section-sub { color: var(--muted); font-size: 14px; margin-bottom: 22px; max-width: 760px; }
 
   /* ---------- project grid ---------- */
   .grid {
@@ -108,6 +109,24 @@
   }
   .card .links a:hover { text-decoration: underline; }
 
+  /* cards with a screenshot on top */
+  .card.has-img { padding: 0; overflow: hidden; }
+  .card.has-img .thumb {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-bottom: 1px solid var(--rule);
+    background: #e2e8f0;
+  }
+  .card.has-img .body {
+    padding: 16px 22px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
   /* ---------- skills ---------- */
   .skills { display: flex; flex-wrap: wrap; gap: 8px; }
   .skill {
@@ -137,7 +156,7 @@
   <p class="blurb">
     10+ years building enterprise-scale web applications - deep front-end expertise with
     full-stack range across Node.js and Java/Spring Boot. Author of open-source Angular
-    component libraries and MCP developer tools, published on npm.
+    component libraries, LLM and RAG tooling, and MCP developer tools - 16 packages on npm.
   </p>
   <div class="links">
     <a class="btn btn-primary" href="https://github.com/qwertymuzaffar">GitHub</a>
@@ -147,67 +166,191 @@
 </header>
 
 <main>
-  <h2>Open-Source Projects</h2>
-  <div class="section-sub">Everything below is public - click through to the code, the npm package, or a live demo.</div>
+  <h2>Angular Libraries &amp; In-Browser Demos</h2>
+  <div class="section-sub">Everything below is public - click through to the code, the npm package, or a live demo. Published with provenance, each with a live Storybook or demo on GitHub Pages.</div>
+
+  <div class="grid">
+    <div class="card has-img">
+      <img class="thumb" src="img/worldwind-ui.jpg" width="800" height="500" alt="worldwind-ui - NASA WebWorldWind globe with layer switcher, legend and widgets" loading="lazy" />
+      <div class="body">
+        <h3>worldwind-ui</h3>
+        <div class="badges">
+          <span class="badge b-npm">npm</span><span class="badge b-live">live demo</span>
+          <span class="badge">Angular</span><span class="badge">React</span><span class="badge">WebGL</span><span class="badge">NASA WorldWind</span>
+        </div>
+        <p class="tagline">UI toolkit for the NASA WebWorldWind 3D globe - a headless TypeScript core plus React and Angular adapters: layers, shapes, picking, popups and ready-made widgets. Three npm packages released with provenance, cross-browser Playwright suite, docs site with live demos.</p>
+        <div class="links">
+          <a href="https://qwertymuzaffar.github.io/worldwind-ui/">Docs &amp; live demos</a>
+          <a href="https://www.npmjs.com/package/ngx-worldwind">npm: ngx-worldwind</a>
+          <a href="https://www.npmjs.com/package/react-worldwind">npm: react-worldwind</a>
+          <a href="https://github.com/qwertymuzaffar/worldwind-ui">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card has-img">
+      <img class="thumb" src="img/ngx-transformers.jpg" width="800" height="500" alt="ngx-transformers Storybook - on-device model demos" loading="lazy" />
+      <div class="body">
+        <h3>ngx-transformers</h3>
+        <div class="badges">
+          <span class="badge b-npm">npm</span><span class="badge b-live">live demo</span>
+          <span class="badge">Angular</span><span class="badge">Transformers.js</span><span class="badge">on-device ML</span>
+        </div>
+        <p class="tagline">On-device ML for Angular - Transformers.js models wrapped in a signals API: sentiment and zero-shot classification, embeddings and semantic search, translation, and Whisper speech-to-text running in the browser, on WebGPU when the device has it. No server, no API key.</p>
+        <div class="links">
+          <a href="https://qwertymuzaffar.github.io/ngx-transformers/">Live Storybook</a>
+          <a href="https://www.npmjs.com/package/ngx-transformers">npm</a>
+          <a href="https://github.com/qwertymuzaffar/ngx-transformers">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card has-img">
+      <img class="thumb" src="img/browser-rag.jpg" width="800" height="500" alt="browser-rag demo - document chunks indexed and searched in the browser" loading="lazy" />
+      <div class="body">
+        <h3>browser-rag</h3>
+        <div class="badges">
+          <span class="badge b-live">live demo</span>
+          <span class="badge">Angular</span><span class="badge">RAG</span><span class="badge">no server</span>
+        </div>
+        <p class="tagline">RAG retrieval running entirely in the browser - chunklet splits the document, ngx-transformers embeds it on-device, minivec indexes the vectors in an HNSW graph, and every hit highlights the exact passage in the source. Nothing leaves the device.</p>
+        <div class="links">
+          <a href="https://qwertymuzaffar.github.io/browser-rag/">Live demo</a>
+          <a href="https://github.com/qwertymuzaffar/browser-rag">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card has-img">
+      <img class="thumb" src="img/ngx-kanban-board.jpg" width="800" height="500" alt="ngx-kanban-board Storybook - drag-and-drop kanban columns" loading="lazy" />
+      <div class="body">
+        <h3>ngx-kanban-board</h3>
+        <div class="badges">
+          <span class="badge b-npm">npm</span><span class="badge b-live">live demo</span>
+          <span class="badge">Angular</span><span class="badge">CDK</span><span class="badge">98% coverage</span>
+        </div>
+        <p class="tagline">Drag-and-drop kanban board - pointer and keyboard dragging, WIP limits, inline column and card creation, signals API, themeable via CSS custom properties.</p>
+        <div class="links">
+          <a href="https://qwertymuzaffar.github.io/ngx-kanban-board/">Live Storybook</a>
+          <a href="https://www.npmjs.com/package/ngx-kanban-board">npm</a>
+          <a href="https://github.com/qwertymuzaffar/ngx-kanban-board">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card has-img">
+      <img class="thumb" src="img/ngx-diff-viewer.jpg" width="800" height="500" alt="ngx-diff-viewer Storybook - side-by-side diff with intra-line highlighting" loading="lazy" />
+      <div class="body">
+        <h3>ngx-diff-viewer</h3>
+        <div class="badges">
+          <span class="badge b-npm">npm</span><span class="badge b-live">live demo</span>
+          <span class="badge">Angular</span><span class="badge">100% line coverage</span>
+        </div>
+        <p class="tagline">Text diff viewer with side-by-side and inline modes - built-in LCS engine with intra-line change highlighting, zero dependencies.</p>
+        <div class="links">
+          <a href="https://qwertymuzaffar.github.io/ngx-diff-viewer/">Live Storybook</a>
+          <a href="https://www.npmjs.com/package/ngx-diff-viewer">npm</a>
+          <a href="https://github.com/qwertymuzaffar/ngx-diff-viewer">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>AI &amp; LLM Libraries</h2>
+  <div class="section-sub">TypeScript, zero dependencies, ESM and CommonJS - the building blocks I kept rewriting for LLM apps: conversation memory, citation checks, spend limits, chunking, vector search, PHI redaction and dataset checks.</div>
 
   <div class="grid">
     <div class="card">
-      <h3>worldwind-ui</h3>
+      <h3>memoryline</h3>
       <div class="badges">
-        <span class="badge b-npm">npm</span><span class="badge b-live">live demo</span>
-        <span class="badge">Angular</span><span class="badge">React</span><span class="badge">WebGL</span><span class="badge">NASA WorldWind</span>
+        <span class="badge b-npm">npm</span><span class="badge">TypeScript</span><span class="badge">LLM memory</span><span class="badge">zero deps</span>
       </div>
-      <p class="tagline">UI toolkit for the NASA WebWorldWind 3D globe - a headless TypeScript core plus React and Angular adapters: layers, shapes, picking, popups and ready-made widgets. Three npm packages released with provenance, cross-browser Playwright suite, docs site with live demos.</p>
+      <p class="tagline">Conversation memory for LLM apps - a token-budgeted window of recent turns, a running summary that compacts older ones, pinned and extracted facts, and semantic recall of what was folded away. Tool calls are modelled natively, so compaction never separates a call from its result. Renders straight to OpenAI or Anthropic messages.</p>
       <div class="links">
-        <a href="https://qwertymuzaffar.github.io/worldwind-ui/">Docs &amp; live demos</a>
-        <a href="https://www.npmjs.com/package/ngx-worldwind">npm: ngx-worldwind</a>
-        <a href="https://www.npmjs.com/package/react-worldwind">npm: react-worldwind</a>
-        <a href="https://github.com/qwertymuzaffar/worldwind-ui">GitHub</a>
+        <a href="https://www.npmjs.com/package/memoryline">npm</a>
+        <a href="https://github.com/qwertymuzaffar/memoryline">GitHub</a>
       </div>
     </div>
 
     <div class="card">
-      <h3>ngx-transformers</h3>
+      <h3>sourcecheck</h3>
       <div class="badges">
-        <span class="badge b-npm">npm</span><span class="badge b-live">live demo</span>
-        <span class="badge">Angular</span><span class="badge">Transformers.js</span><span class="badge">on-device ML</span>
+        <span class="badge b-npm">npm</span><span class="badge">TypeScript</span><span class="badge">citations</span><span class="badge">zero deps</span>
       </div>
-      <p class="tagline">On-device ML for Angular - Transformers.js models wrapped in a signals API: sentiment and zero-shot classification, embeddings and semantic search, translation, and Whisper speech-to-text running in the browser, on WebGPU when the device has it. No server, no API key.</p>
+      <p class="tagline">Checks that every claim an LLM makes points at a real passage in its sources - exact, normalized and fuzzy quote location with offsets, claims graded supported / partial / unsupported with coverage, field-level checks for extraction, a model-judge hook, citation prompts and parsers, Markdown reports.</p>
       <div class="links">
-        <a href="https://qwertymuzaffar.github.io/ngx-transformers/">Live Storybook</a>
-        <a href="https://www.npmjs.com/package/ngx-transformers">npm</a>
-        <a href="https://github.com/qwertymuzaffar/ngx-transformers">GitHub</a>
+        <a href="https://www.npmjs.com/package/sourcecheck">npm</a>
+        <a href="https://github.com/qwertymuzaffar/sourcecheck">GitHub</a>
       </div>
     </div>
 
     <div class="card">
-      <h3>ngx-kanban-board</h3>
+      <h3>llm-budget</h3>
       <div class="badges">
-        <span class="badge b-npm">npm</span><span class="badge b-live">live demo</span>
-        <span class="badge">Angular</span><span class="badge">CDK</span><span class="badge">98% coverage</span>
+        <span class="badge b-npm">npm</span><span class="badge">TypeScript</span><span class="badge">metering</span><span class="badge">zero deps</span>
       </div>
-      <p class="tagline">Drag-and-drop kanban board - pointer and keyboard dragging, WIP limits, signals API, themeable via CSS custom properties.</p>
+      <p class="tagline">Per-user token and dollar budgets, rate limits and a circuit breaker for LLM API calls - usage metered from OpenAI and Anthropic responses and streams, reservations so concurrent calls cannot overshoot a limit, Redis and shared-store adapters for multi-instance apps, Express middleware.</p>
       <div class="links">
-        <a href="https://qwertymuzaffar.github.io/ngx-kanban-board/">Live Storybook</a>
-        <a href="https://www.npmjs.com/package/ngx-kanban-board">npm</a>
-        <a href="https://github.com/qwertymuzaffar/ngx-kanban-board">GitHub</a>
+        <a href="https://www.npmjs.com/package/llm-budget">npm</a>
+        <a href="https://github.com/qwertymuzaffar/llm-budget">GitHub</a>
       </div>
     </div>
 
     <div class="card">
-      <h3>ngx-diff-viewer</h3>
+      <h3>chunklet</h3>
       <div class="badges">
-        <span class="badge b-npm">npm</span><span class="badge b-live">live demo</span>
-        <span class="badge">Angular</span><span class="badge">100% line coverage</span>
+        <span class="badge b-npm">npm</span><span class="badge">TypeScript</span><span class="badge">RAG</span><span class="badge">zero deps</span>
       </div>
-      <p class="tagline">Text diff viewer with side-by-side and inline modes - built-in LCS engine with intra-line change highlighting, zero dependencies.</p>
+      <p class="tagline">Token-aware, structure-aware text chunking for RAG - sentence, markdown, code and HTML modes with heading breadcrumbs, a pluggable tokenizer, and exact source offsets so every retrieved chunk can be highlighted in the original document.</p>
       <div class="links">
-        <a href="https://qwertymuzaffar.github.io/ngx-diff-viewer/">Live Storybook</a>
-        <a href="https://www.npmjs.com/package/ngx-diff-viewer">npm</a>
-        <a href="https://github.com/qwertymuzaffar/ngx-diff-viewer">GitHub</a>
+        <a href="https://www.npmjs.com/package/chunklet">npm</a>
+        <a href="https://github.com/qwertymuzaffar/chunklet">GitHub</a>
       </div>
     </div>
 
+    <div class="card">
+      <h3>minivec</h3>
+      <div class="badges">
+        <span class="badge b-npm">npm</span><span class="badge">TypeScript</span><span class="badge">vector search</span><span class="badge">zero deps</span>
+      </div>
+      <p class="tagline">Tiny embedded vector store - HNSW approximate search written from scratch, exact search, metadata filters, JSON persistence. Runs in Node, the browser and edge runtimes; 40-67x faster than exact search at 99-100% recall.</p>
+      <div class="links">
+        <a href="https://www.npmjs.com/package/minivec">npm</a>
+        <a href="https://github.com/qwertymuzaffar/minivec">GitHub</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>deidentify</h3>
+      <div class="badges">
+        <span class="badge b-npm">npm</span><span class="badge b-live">live demo</span><span class="badge">TypeScript</span><span class="badge">HIPAA / PHI</span>
+      </div>
+      <p class="tagline">PHI de-identification for clinical text - detects, redacts and pseudonymizes the HIPAA Safe Harbor identifiers with exact offsets, section-aware for SOAP-style notes, an expert-determination risk summary, and optional on-device NER. Zero dependencies.</p>
+      <div class="links">
+        <a href="https://qwertymuzaffar.github.io/deidentify/">Live demo</a>
+        <a href="https://www.npmjs.com/package/deidentify">npm</a>
+        <a href="https://github.com/qwertymuzaffar/deidentify">GitHub</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>leakcheck</h3>
+      <div class="badges">
+        <span class="badge b-npm">npm</span><span class="badge b-live">live demo</span><span class="badge">TypeScript</span><span class="badge">ML data quality</span>
+      </div>
+      <p class="tagline">Leakage, drift and data-contract checks for ML datasets - target leakage, train/test overlap and future-dated features; PSI, KS and chi-square drift against saved baselines; schema, range and freshness contracts; a CLI for CSV, NDJSON and JSON with Markdown reports. Zero dependencies.</p>
+      <div class="links">
+        <a href="https://qwertymuzaffar.github.io/leakcheck/">Live demo</a>
+        <a href="https://www.npmjs.com/package/leakcheck">npm</a>
+        <a href="https://github.com/qwertymuzaffar/leakcheck">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>Backend APIs &amp; MCP Servers</h2>
+  <div class="section-sub">Node.js and Java services, plus MCP servers that plug into AI coding agents.</div>
+
+  <div class="grid">
     <div class="card">
       <h3>timeline-api</h3>
       <div class="badges">
@@ -265,11 +408,13 @@
     <span class="skill">Node.js / Express</span>
     <span class="skill">Java / Spring Boot</span>
     <span class="skill">REST APIs / OpenAPI</span>
+    <span class="skill">LLM &amp; RAG Tooling</span>
+    <span class="skill">On-device ML (Transformers.js, WebGPU)</span>
+    <span class="skill">MCP Servers</span>
     <span class="skill">Nx Monorepos</span>
     <span class="skill">Jest / Vitest</span>
     <span class="skill">Storybook</span>
     <span class="skill">Docker / CI-CD</span>
-    <span class="skill">MCP / AI Tooling</span>
   </div>
 </main>
 
